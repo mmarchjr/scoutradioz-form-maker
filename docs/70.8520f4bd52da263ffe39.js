@@ -1,1 +1,0 @@
-(self.webpackChunkgenerator_sample_app=self.webpackChunkgenerator_sample_app||[]).push([[70],{70:e=>{e.exports=function(e){return e.toLowerCase().replace(/\s+(\w)/g,(function(e,p){return p.toUpperCase()}))}}}]);
