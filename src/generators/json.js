@@ -13,7 +13,6 @@ import keyGen from'../utils/keyGen'
 import * as Blockly from 'blockly';
 export const jsonGenerator = new Blockly.Generator('JSON');
 
-
 const Order = {
   ATOMIC: 0,
 };
