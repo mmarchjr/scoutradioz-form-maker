@@ -5,8 +5,7 @@
  */
 
 // import * as Blockly from 'blockly/core';
-const Blockly = await import(/* webpackChunkName: "blockly-core" */ 'blockly/core');
-
+import * as Blockly from 'blockly';
 // Use a unique storage key for this codelab
 const storageKey = 'jsonGeneratorWorkspace';
 
