@@ -36,6 +36,14 @@ const ws = Blockly.inject(blocklyDiv, {
     },
   comments : false,
   theme: DarkTheme,
+  move:{
+    scrollbars: {
+      horizontal: false,
+      vertical: false
+    },
+    drag: false,
+    wheel: false}
+
   });
 
 // This function resets the code div and shows the
