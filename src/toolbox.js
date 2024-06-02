@@ -76,6 +76,10 @@ export const toolbox = {
           kind: 'block',
           type: 'checkbox',
         },
+        {
+          kind: 'block',
+          type: 'counter',
+        },
       ],
     },
     

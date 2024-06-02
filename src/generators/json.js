@@ -108,3 +108,12 @@ jsonGenerator.forBlock['checkbox'] = function (block, generator) {
   const code = `{\n"type": "checkbox",\n"label": "${text}",\n"id": "${keyGen(key)}"\n}`;
   return code;
 };
+jsonGenerator.forBlock['counter'] = function (block, generator) {
+  const text = block.getFieldValue('NAME');
+  const key = block.getFieldValue('KEY');
+  const negative = (block.getFieldValue('NEGATIVE')=='FALSE')
+  const type = (negative)? 'counter':'counterallownegative';
+  const code = `{\n"type": "${type}",\n"label": "${text}",\n"id": "${keyGen(key)}"\n}`;
+  return code;
+};
+

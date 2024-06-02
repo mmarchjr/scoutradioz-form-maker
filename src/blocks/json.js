@@ -126,7 +126,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
 
   {
     type: 'checkbox',
-    message0: 'checkbox with text: %1 and key: %2',
+    message0: 'Checkbox with text: %1 and key: %2',
     args0: [
       {
         type: 'field_input',
@@ -138,6 +138,30 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
         name: 'KEY',
         text: '',
       },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 180,
+  },
+  {
+    type: 'counter',
+    message0: 'Counter with text: %1 and key: %2\n Allow Negative? %3',
+    args0: [
+      {
+        type: 'field_input',
+        name: 'NAME',
+        text: '',
+      },
+      {
+        type: 'field_input',
+        name: 'KEY',
+        text: '',
+      },
+      {
+        "type": "field_checkbox",
+        "name": "NEGATIVE",
+        "checked": false
+      }
     ],
     previousStatement: null,
     nextStatement: null,
