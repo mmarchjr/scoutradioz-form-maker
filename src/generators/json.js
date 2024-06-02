@@ -101,3 +101,10 @@ jsonGenerator.forBlock['small_header'] = function (block, generator) {
   const code = `{\n"type": "h3",\n"label": "${text}",\n"id": "${keyGen(key)}"\n}`;
   return code;
 };
+
+jsonGenerator.forBlock['checkbox'] = function (block, generator) {
+  const text = block.getFieldValue('NAME');
+  const key = block.getFieldValue('KEY');
+  const code = `{\n"type": "checkbox",\n"label": "${text}",\n"id": "${keyGen(key)}"\n}`;
+  return code;
+};

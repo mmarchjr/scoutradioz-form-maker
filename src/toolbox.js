@@ -39,7 +39,7 @@ export const toolbox = {
     {
       kind: 'category',
       name: 'Start',
-      categorystyle: 'math_category',
+      colour: 120,
       contents: [
         {
           kind: 'block',
@@ -50,7 +50,7 @@ export const toolbox = {
     {
       kind: 'category',
       name: 'Headers & Spacer',
-      categorystyle: 'logic_category',
+      categorystyle: 'math_category',
       contents: [
         {
           kind: 'block',
@@ -63,6 +63,18 @@ export const toolbox = {
         {
           kind: 'block',
           type: 'small_header',
+        },
+      ],
+    },
+
+    {
+      kind: 'category',
+      name: 'CheckBox',
+      colour: 180,
+      contents: [
+        {
+          kind: 'block',
+          type: 'checkbox',
         },
       ],
     },
