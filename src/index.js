@@ -9,7 +9,7 @@ import {blocks} from './blocks/json';
 import {jsonGenerator} from './generators/json';
 import {save, load} from './serialization';
 import {toolbox} from './toolbox';
-import './index.css';
+import('./index.css');
 import {
   ContinuousToolbox,
   ContinuousFlyout,
