@@ -7,20 +7,20 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-// Function to fetch CSS file and extract colors
-async function extractColorsFromCSS(url) {
+// Function to fetch CSS file and extract unique colors
+async function extractUniqueColorsFromCSS(url) {
     try {
         const response = await axios.get(url);
         const cssContent = response.data;
         const colorRegex = /#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})\b/g;
-        const colors = [];
-        let match;
+        const colors = new Set(); // Using Set to store unique colors
 
+        let match;
         while ((match = colorRegex.exec(cssContent)) !== null) {
-            colors.push(match[0]);
+            colors.add(match[0].toUpperCase()); // Convert to upper case for case-insensitive comparison
         }
 
-        return colors;
+        return Array.from(colors); // Convert Set back to array
     } catch (error) {
         console.error('Error fetching CSS:', error);
         return [];
@@ -47,10 +47,10 @@ app.get('/', async (req, res) => {
         return;
     }
     
-    const colors = await extractColorsFromCSS(cssUrl);
+    const uniqueColors = await extractUniqueColorsFromCSS(cssUrl);
     
     // Save RGB codes to a file
-    saveRGBToFile(colors);
+    saveRGBToFile(uniqueColors);
 
     // Generate HTML content
     let htmlContent = `
@@ -71,7 +71,7 @@ app.get('/', async (req, res) => {
             <div class="palette">
     `;
 
-    colors.forEach(color => {
+    uniqueColors.forEach(color => {
         const colorObj = Color(color);
         htmlContent += `
             <div class="color" style="background-color: ${color};">
