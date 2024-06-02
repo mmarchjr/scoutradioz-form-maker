@@ -45,7 +45,6 @@ const runCode = () => {
 // Load the initial state from storage and run the code.
 
 load(ws);
-ws.clear()
 runCode();
 
 // Every time the workspace changes state, save the changes to storage.
