@@ -10,7 +10,7 @@
  */
 
 import * as Blockly from 'blockly';
-import keyGen from '../utils/keyGen';
+const keyGen = require('../utils/keygen')
 
 export const jsonGenerator = new Blockly.Generator('JSON');
 
