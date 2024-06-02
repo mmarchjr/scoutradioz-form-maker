@@ -10,6 +10,11 @@ import {jsonGenerator} from './generators/json';
 import {save, load} from './serialization';
 import {toolbox} from './toolbox';
 import './index.css';
+import {
+  ContinuousToolbox,
+  ContinuousFlyout,
+  ContinuousMetrics,
+} from '@blockly/continuous-toolbox';
 
 // Register the blocks with Blockly
 Blockly.common.defineBlocks(blocks);
@@ -18,10 +23,16 @@ Blockly.common.defineBlocks(blocks);
 const codeDiv = document.getElementById('generatedCode').firstChild;
 const blocklyDiv = document.getElementById('blocklyDiv');
 const ws = Blockly.inject(blocklyDiv, {
+  plugins: {
+    toolbox: ContinuousToolbox,
+    flyoutsVerticalToolbox: ContinuousFlyout,
+    metricsManager: ContinuousMetrics,
+  },
   toolbox,
   maxInstances: {
   'json_start': 1  // Apply the instance limit in the workspace configuration
     },
+  comments : false,
   });
 
 // This function resets the code div and shows the

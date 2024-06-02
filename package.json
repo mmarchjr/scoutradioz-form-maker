@@ -24,6 +24,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "@blockly/continuous-toolbox": "^6.0.1",
     "blockly": "^11.0.0"
   }
 }

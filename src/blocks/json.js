@@ -104,4 +104,23 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
     nextStatement: null,
     colour: 230,
   },
+  {
+    type: 'small_header',
+    message0: 'Small header with text: %1 and key: %2',
+    args0: [
+      {
+        type: 'field_input',
+        name: 'NAME',
+        text: '',
+      },
+      {
+        type: 'field_input',
+        name: 'KEY',
+        text: '',
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 230,
+  },
 ]);

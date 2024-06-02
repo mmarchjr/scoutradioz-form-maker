@@ -38,13 +38,20 @@ export const toolbox = {
     // },
     {
       kind: 'category',
-      name: 'Headers & Spacer',
-      categorystyle: 'logic_category',
+      name: 'Start',
+      categorystyle: 'math_category',
       contents: [
         {
           kind: 'block',
           type: 'json_start',
         },
+      ],
+    },
+    {
+      kind: 'category',
+      name: 'Headers & Spacer',
+      categorystyle: 'logic_category',
+      contents: [
         {
           kind: 'block',
           type: 'spacer',
@@ -53,7 +60,12 @@ export const toolbox = {
           kind: 'block',
           type: 'large_header',
         },
+        {
+          kind: 'block',
+          type: 'small_header',
+        },
       ],
     },
+    
   ],
 };
