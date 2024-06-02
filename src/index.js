@@ -15,6 +15,8 @@ import {
   ContinuousFlyout,
   ContinuousMetrics,
 } from '@blockly/continuous-toolbox';
+import DarkTheme from '@blockly/theme-dark';
+
 
 // Register the blocks with Blockly
 Blockly.common.defineBlocks(blocks);
@@ -33,6 +35,7 @@ const ws = Blockly.inject(blocklyDiv, {
   'json_start': 1  // Apply the instance limit in the workspace configuration
     },
   comments : false,
+  theme: DarkTheme,
   });
 
 // This function resets the code div and shows the

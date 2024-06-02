@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@blockly/continuous-toolbox": "^6.0.1",
+    "@blockly/theme-dark": "^7.0.1",
     "blockly": "^11.0.0"
   }
 }

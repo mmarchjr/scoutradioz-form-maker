@@ -76,12 +76,44 @@ export const toolbox = {
           kind: 'block',
           type: 'checkbox',
         },
+      ],
+    },
+    {
+      kind: 'category',
+      name: 'Counter',
+      colour: 275,
+      contents: [
         {
           kind: 'block',
           type: 'counter',
         },
       ],
     },
-    
+    {
+      kind: 'category',
+      name: 'Text',
+      colour: 300,
+      contents: [
+        {
+          kind: 'block',
+          type: 'textblock',
+        },
+      ],
+    },
+    {
+      kind: 'category',
+      name: 'Sliders',
+      colour: 50,
+      contents: [
+        {
+          kind: 'block',
+          type: 'slider',
+        },
+        {
+          kind: 'block',
+          type: 'timeslider',
+        },
+      ],
+    },
   ],
 };

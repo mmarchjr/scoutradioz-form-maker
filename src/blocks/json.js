@@ -13,44 +13,6 @@ import * as Blockly from 'blockly';
 
 export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   {
-    type: 'object',
-    message0: '{ %1 %2 }',
-    args0: [
-      {
-        type: 'input_dummy',
-      },
-      {
-        type: 'input_statement',
-        name: 'MEMBERS',
-      },
-    ],
-    output: null,
-    colour: 230,
-  },
-  {
-    type: 'member',
-    message0: '%1 %2 %3',
-    args0: [
-      {
-        type: 'field_input',
-        name: 'MEMBER_NAME',
-        text: '',
-      },
-      {
-        type: 'field_label',
-        name: 'COLON',
-        text: ':',
-      },
-      {
-        type: 'input_value',
-        name: 'MEMBER_VALUE',
-      },
-    ],
-    previousStatement: null,
-    nextStatement: null,
-    colour: 230,
-  },
-  {
     type: "json_start",
     message0: "Start Form %1  %2 End Form",
     args0: [
@@ -165,6 +127,88 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
     ],
     previousStatement: null,
     nextStatement: null,
-    colour: 180,
+    colour: 275,
+  },
+  {
+    type: 'textblock',
+    message0: 'Text block with text: %1 and key: %2',
+    args0: [
+      {
+        type: 'field_input',
+        name: 'NAME',
+        text: '',
+      },
+      {
+        type: 'field_input',
+        name: 'KEY',
+        text: '',
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 300,
+  },
+
+  {
+    type: 'slider',
+    message0: 'Slider with text: %1 and key: %2\n MIN: %3\n MAX: %4\n STEP: %5',
+    args0: [
+      {
+        type: 'field_input',
+        name: 'NAME',
+        text: '',
+      },
+      {
+        type: 'field_input',
+        name: 'KEY',
+        text: '',
+      },
+      {
+        type: 'field_number',
+        name: 'MIN',
+      },
+      {
+        type: 'field_number',
+        name: 'MAX',
+      },
+      {
+        type: 'field_number',
+        name: 'STEP',
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 75,
+  },
+  {
+    type: 'timeslider',
+    message0: 'Time slider with text: %1 and key: %2\n MIN: %3\n MAX: %4\n STEP: %5',
+    args0: [
+      {
+        type: 'field_input',
+        name: 'NAME',
+        text: '',
+      },
+      {
+        type: 'field_input',
+        name: 'KEY',
+        text: '',
+      },
+      {
+        type: 'field_number',
+        name: 'MIN',
+      },
+      {
+        type: 'field_number',
+        name: 'MAX',
+      },
+      {
+        type: 'field_number',
+        name: 'STEP',
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 75,
   },
 ]);

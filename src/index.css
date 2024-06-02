@@ -1,6 +1,11 @@
 body {
   margin: 0;
   max-width: 100vw;
+  background-image: linear-gradient(#54555A, rgba(6, 11, 16, 0.7));
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 pre,
@@ -32,7 +37,11 @@ code {
 
 #generatedCode {
   height: 50%;
-  background-color: rgb(247, 240, 228);
+  background-image: linear-gradient(#009C4E, rgba(6, 11, 16, 0.7));
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 #output {
