@@ -10,7 +10,6 @@
 function keyGen(str) {
     // Convert the entire string to lowercase
     const lowerCaseStr = str.toLowerCase();
-
     // Remove spaces and capitalize the first letter of each word after the first word
     const transformedStr = lowerCaseStr.replace(/\s+(\w)/g, (_, c) => c.toUpperCase());
 

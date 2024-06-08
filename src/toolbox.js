@@ -115,5 +115,10 @@ export const toolbox = {
         },
       ],
     },
+    {
+      kind: "category",
+      name: "Variables",
+      custom: "VARIABLE"
+    },
   ],
 };
