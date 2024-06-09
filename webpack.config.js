@@ -3,13 +3,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // Base config that applies to either development or production mode.
 const config = {
-  entry: './src/index.js',
+  entry: {
+    index: './src/index.js',
+  },
   output: {
     // Compile the source files into a bundle.
-    filename: 'bundle.js',
+    filename: '[fullhash].js',
     path: path.resolve(__dirname, 'docs'),
     clean: true,
   },
+
   // Enable webpack-dev-server to get hot refresh of the app.
   devServer: {
     static: './build',
@@ -21,8 +24,19 @@ const config = {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
     ],
   },
+  
   plugins: [
     // Generate the HTML index page based on our template.
     // This will output the same index page with the bundle we

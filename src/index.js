@@ -4,20 +4,22 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import * as Blockly from 'blockly';
-import {blocks} from './blocks/json';
-import {jsonGenerator} from './generators/json';
-import {save, load} from './serialization';
-import {toolbox} from './toolbox';
-import'./index.css';
-import {
-  ContinuousToolbox,
-  ContinuousFlyout,
-  ContinuousMetrics,
-} from '@blockly/continuous-toolbox';
-import DarkTheme from '@blockly/theme-dark';
+// import * as Blockly from 'blockly';
+const {blocks} = await import('./blocks/json');
+const {jsonGenerator} = await import('./generators/json');
+const {save, load} = await import('./serialization');
+const {toolbox} = await import('./toolbox');
+await import('./index.css');
+import {ContinuousToolbox,ContinuousFlyout,ContinuousMetrics} from '@blockly/continuous-toolbox';
+const DarkTheme = await import('@blockly/theme-dark');
 
+async function loadBlockly() {
+  try {
+    const Blockly = await import(/* webpackChunkName: "blockly" */ 'blockly');
 
+    Blockly.common.defineBlocks(blocks);
+
+    
 // Register the blocks with Blockly
 Blockly.common.defineBlocks(blocks);
 
@@ -50,7 +52,7 @@ const ws = Blockly.inject(blocklyDiv, {
 // generated code from the workspace.
 const runCode = () => {
   const code = jsonGenerator.workspaceToCode(ws);
-  codeDiv.innerText = code;
+  codeDiv.innerText = '[\n'+code+'\n]';
 };
 
 // Load the initial state from storage and run the code.
@@ -80,3 +82,14 @@ ws.addChangeListener((e) => {
   }
   runCode();
 });
+
+    // Initialize Blockly or use it as needed
+    console.log('Blockly loaded successfully:', Blockly);
+  } catch (error) {
+    console.error('Error loading Blockly:', error);
+  }
+
+}
+
+// Call the function to load Blockly
+loadBlockly();

@@ -9,8 +9,8 @@
  * generator codelab.
  */
 
-import * as Blockly from 'blockly';
-const keyGen = require('../utils/keygen')
+const Blockly = await import(/* webpackChunkName: "blockly" */ 'blockly');
+const keyGen = await import('../utils/keygen');
 
 export const jsonGenerator = new Blockly.Generator('JSON');
 

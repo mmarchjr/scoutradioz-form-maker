@@ -4,7 +4,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import * as Blockly from 'blockly/core';
+// import * as Blockly from 'blockly/core';
+const Blockly = await import(/* webpackChunkName: "blockly-core" */ 'blockly/core');
 
 // Use a unique storage key for this codelab
 const storageKey = 'jsonGeneratorWorkspace';

@@ -9,7 +9,7 @@
  * generator codelab.
  */
 
-import * as Blockly from 'blockly';
+const Blockly = await import(/* webpackChunkName: "blockly" */ 'blockly');
 
 export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   {
