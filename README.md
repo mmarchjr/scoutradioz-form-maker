@@ -1,3 +1,5 @@
+ScoutRadioz Form Maker © 2025 by Michael Marchiniak is licensed under CC BY-NC-ND 4.0 
+
 # Blockly Sample App
 
 ## Purpose
